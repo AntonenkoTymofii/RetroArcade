@@ -150,33 +150,33 @@ public class MainActivity extends AppCompatActivity implements View.OnTouchListe
                     btnPause.setText("⏸");
                     txtPausedOverlay.setVisibility(View.GONE);
 
-//                    showGameOverDialog();
+                    showGameOverDialog();
                 }
             }
         };
     }
 
-//    private void showGameOverDialog() {
-//        int currentScore = game.getScore();
-//        int bestScore = getBestScore();
-//
-//        GameOverDialog dialog = GameOverDialog.newInstance(currentScore, bestScore);
-//
-//        dialog.setListener(new GameOverDialog.GameOverListener() {
-//            @Override
-//            public void onRestart() {
-//                game.startNewGame(currentDifficulty);
-//                startGame();
-//            }
-//
-//            @Override
-//            public void onMenu() {
-//                finish();
-//            }
-//        });
-//
-//        dialog.show(getSupportFragmentManager(), "GameOverDialog");
-//    }
+    private void showGameOverDialog() {
+        int currentScore = game.getScore();
+        int bestScore = getBestScore();
+
+        GameOverDialog dialog = GameOverDialog.newInstance(currentScore, bestScore);
+
+        dialog.setListener(new GameOverDialog.GameOverListener() {
+            @Override
+            public void onRestart() {
+                game.startNewGame(currentDifficulty);
+                startGame();
+            }
+
+            @Override
+            public void onMenu() {
+                finish();
+            }
+        });
+
+        dialog.show(getSupportFragmentManager(), "GameOverDialog");
+    }
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
