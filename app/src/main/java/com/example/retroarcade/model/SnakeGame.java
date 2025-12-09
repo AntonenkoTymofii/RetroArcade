@@ -1,4 +1,4 @@
-package com.example.retroarcade;
+package com.example.retroarcade.model;
 
 import android.graphics.Point;
 
