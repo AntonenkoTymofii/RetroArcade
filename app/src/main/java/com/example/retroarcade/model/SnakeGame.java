@@ -8,8 +8,8 @@ import java.util.List;
 import java.util.Random;
 
 public class SnakeGame {
-    private final int NUM_BLOCKS_WIDE = 20;
-    private final int NUM_BLOCKS_HIGH = 30;
+    private int NUM_BLOCKS_WIDE = 20;
+    private int NUM_BLOCKS_HIGH = 30;
 
     public enum Difficulty {
         EASY, MEDIUM, HARD
@@ -30,6 +30,11 @@ public class SnakeGame {
 
     public SnakeGame() {
         startNewGame(Difficulty.EASY);
+    }
+
+    public void setBoardSize(int widthInBlocks, int heightInBlocks) {
+        this.NUM_BLOCKS_WIDE = widthInBlocks;
+        this.NUM_BLOCKS_HIGH = heightInBlocks;
     }
 
     public void startNewGame(Difficulty difficulty) {

@@ -41,6 +41,23 @@ public class SnakeView extends View {
     }
 
     @Override
+    protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+        super.onSizeChanged(w, h, oldw, oldh);
+
+        if (game != null) {
+            int targetWidthBlocks = 20;
+
+            int newBlockSize = w / targetWidthBlocks;
+
+            if (newBlockSize < 1) newBlockSize = 1;
+
+            int newHeightBlocks = h / newBlockSize;
+
+            game.setBoardSize(targetWidthBlocks, newHeightBlocks);
+        }
+    }
+
+    @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (game == null) return;
